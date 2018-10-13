@@ -1,6 +1,10 @@
 #ifndef _TESTS_H
 #define _TESTS_H
 
-// TODO
+#include <stdio.h>
+
+void printTestName(const char* testName) {
+    printf("%s\n\n", testName);
+}
 
 #endif
