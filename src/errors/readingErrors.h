@@ -17,6 +17,6 @@ Errors readError = {
 Errors invalidBufferError = {
     INVALID_BUFFER_ERROR,
     "readDirtyExpression(): invalid buffer"
-}
+};
 
 #endif
