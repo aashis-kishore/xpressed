@@ -13,4 +13,8 @@ void printTestName(const char* testName) {
     printf("%s\n\n", testName);
 }
 
+void printTestPurpose(const char* testPurpose) {
+    printf("%s\n", testPurpose);
+}
+
 #endif
