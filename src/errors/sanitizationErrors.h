@@ -5,5 +5,9 @@
 #include "errors.h"
 
 
+Errors invalidExpressionError = {
+    INVALID_EXPRESSION_ERROR,
+    "getCleanExpression(): invalid expression"
+};
 
 #endif
