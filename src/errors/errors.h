@@ -1,6 +1,9 @@
 #ifndef _ERRORS_H
 #define _ERRORS_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef enum errorcode ErrorCode;
 
 typedef struct errors {
@@ -8,8 +11,13 @@ typedef struct errors {
     char* errorMsg;
 } Errors;
 
-void reportError(char* errorMsg);
+void reportError(char* errorMsg) {
+    printf("%s\n", errorMsg);
+}
 
-void reportErrorAndExit(Errors);
+void reportErrorAndExit(Errors error) {
+    printf("%s\n", error.errorMsg);
+    exit(error.code);
+}
 
 #endif
