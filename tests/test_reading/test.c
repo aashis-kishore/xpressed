@@ -6,26 +6,41 @@
 
 #include "../../src/reading/reading.h"
 
+void test1(char*);
+void test2(char*);
+
 // expression length (arbitrary)
-#define EXP_LENGTH ((size_t)1024)
+// #define EXP_LENGTH ((size_t)1024)
 
 int main(void) {
-    // Test 1
-    printTestName("Test 1: readDirtyExpression()");
 
-    char expression[EXP_LENGTH];
-    int expLength = readDirtyExpression(expression, EXP_LENGTH);
-    if(expLength == (int)strlen(expression)) {
+    test1("Test 1: readDirtyExpression()");
+    // test 2 -- Must be skipped to run further tests
+    test2("Test 2: readDirtyExpression() [ pass no buffer, i.e NULL ]");
+    
+    return 0;
+}
+
+void test1(char* testName) {
+    printTestName(testName);
+
+    const int EXP_LENGTH = 1024;
+    char buffer[EXP_LENGTH];
+
+    int expLength = readDirtyExpression(buffer, EXP_LENGTH);
+
+    if(expLength == (int)strlen(buffer)) {
         puts("TEST 1 PASSED\n");
     } else {
         puts("TEST 1 FAILED\n");
     }
+}
 
-    // Test 2 -- Must be skipped to run Tests after this.
-    printTestName("Test 2: readDirtyExpression() [ pass no buffer, i.e NULL ]");
-    
+void test2(char* testName) {
+    printTestName(testName);
+
+    const int EXP_LENGTH = 1024;
     char* buffer = NULL;
+
     readDirtyExpression(buffer, EXP_LENGTH);
-    
-    return 0;
 }
