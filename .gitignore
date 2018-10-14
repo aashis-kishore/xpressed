@@ -2,4 +2,7 @@
 output
 
 # object files
-*.o 
+*.o
+
+# code's own
+.vscode/
