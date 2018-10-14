@@ -20,6 +20,12 @@ int main(void) {
     } else {
         puts("TEST 1 FAILED\n");
     }
+
+    // Test 2 -- Must be skipped to run Tests after this.
+    printTestName("Test 2: readDirtyExpression() [ pass no buffer, i.e NULL ]");
+    
+    char* buffer = NULL;
+    readDirtyExpression(buffer, EXP_LENGTH);
     
     return 0;
 }
