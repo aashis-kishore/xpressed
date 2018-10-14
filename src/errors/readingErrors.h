@@ -4,10 +4,6 @@
 // do notice the `s`
 #include "errors.h"
 
-enum errorcode {
-    READ_ERROR = 1,
-    INVALID_BUFFER_ERROR,
-};
 
 Errors readError = {
     READ_ERROR,

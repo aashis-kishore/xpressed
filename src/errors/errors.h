@@ -4,7 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef enum errorcode ErrorCode;
+typedef enum errorcode {
+    READ_ERROR = 1,
+    INVALID_BUFFER_ERROR,
+} ErrorCode;
 
 typedef struct errors {
     ErrorCode code;
