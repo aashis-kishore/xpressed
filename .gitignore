@@ -1,2 +1,5 @@
 # executable [known names]
 output
+
+# object files
+*.o 
