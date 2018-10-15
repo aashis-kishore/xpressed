@@ -52,11 +52,9 @@ void test2(char* testName, char* testPurpose, TestFlag flag) {
         const int EXP_LENGTH = 1024;
         char* expression = "2 + 3* 4    -9";
 
-        int expLength = strlen(expression);
         int numOfRemovedChars = getCleanExpression(expression);
-        int newExpLength = strlen(expression);
 
-        if((expLength-newExpLength) == numOfRemovedChars) {
+        if(numOfRemovedChars == 4) {
             puts("TEST 1 PASSED\n");
         } else {
             puts("TEST 1 FAILED\n");
