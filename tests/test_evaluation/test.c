@@ -7,6 +7,7 @@
 
 void test1(char*, char*, TestFlag);
 void test2(char*, char*, TestFlag);
+void test3(char*, char*, TestFlag);
 
 int main(void) {
 
@@ -19,6 +20,12 @@ int main(void) {
     test2(
         "Test 2: destroyStack()",
         "Check whether stack destruction is successful",
+        NO_SKIP_TEST
+    );
+
+    test3(
+        "Test 3: getStackLength()",
+        "Check whether function returns correct output",
         NO_SKIP_TEST
     );
 
@@ -44,5 +51,16 @@ void test2(char* testName, char* testPurpose, TestFlag flag) {
         newStack = NULL;
 
         TEST_VERDICT(!newStack)
+    TEST_END
+}
+
+void test3(char* testName, char* testPurpose, TestFlag flag) {
+
+    TEST_START(testName, testPurpose, flag)
+        Stack newStack = createStack();
+        int stackLen = getStackLength(newStack);
+        destroyStack(newStack);
+
+        TEST_VERDICT(stackLen == 0)
     TEST_END
 }
