@@ -63,3 +63,23 @@ clean_test_evaluation_stack:
 	$(RM) -f $(test_evaluation_stack_objects) $(test_evaluation_out_dir)/output
 
 ##
+
+
+## run all tests: start
+
+run_all_tests: \
+	test_reading	\
+	test_sanitization	\
+	test_evaluation_stack	\
+							\
+	run_test_reading	\
+	run_test_sanitization	\
+	run_test_evaluation_stack	\
+								\
+	clean_test_reading	\
+	clean_test_sanitization	\
+	clean_test_evaluation_stack	\
+	
+## end
+
+.PHONY: test_reading run_test_reading clean_test_reading
