@@ -92,3 +92,27 @@ int emptyStack(Stack stack) {
 
     return stack->length == 0;
 }
+
+static char destroyHeadNode(Stack stack) {
+    Node head = stack->head;
+    char data = head->data;
+
+    stack->head = stack->head->next;
+    stack->length--;
+
+    free(head);
+
+    return data;
+}
+
+char popStack(Stack stack) {
+    if(!stack) {
+        reportErrorAndExit(invalidStackError);
+    }
+
+    if(!emptyStack(stack)) {
+        return destroyHeadNode(stack); 
+    }
+
+    return (char)STACK_UNDERFLOW_ERROR;
+}
