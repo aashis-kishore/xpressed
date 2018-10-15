@@ -28,13 +28,13 @@ int main(void) {
     test3(
         "Test 3: charIsDirty() [Must be declared in the header for testing]",
         "Check whether function returns correctly for given input",
-        NO_SKIP_TEST
+        SKIP_TEST
     );
 
     test4(
         "Test 4: cleanExpression() [[Must be declared in the header for testing]]",
         "Check whether function returns correctly for given input",
-        NO_SKIP_TEST
+        SKIP_TEST
     );
 
     return 0;
