@@ -17,9 +17,9 @@
 
 #define TEST_VERDICT(condition)    \
     if(condition) {  \
-        puts("TEST 1 PASSED\n");    \
+        puts("TEST PASSED\n");    \
     } else {    \
-        puts("TEST 1 FAILED\n");    \
+        puts("TEST FAILED\n");    \
     }
 
 
