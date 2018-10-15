@@ -26,13 +26,13 @@ int main(void) {
     );
 
     test3(
-        "Test 3: charIsDirty()",
+        "Test 3: charIsDirty() [Must be declared in the header for testing]",
         "Check whether function returns correctly for given input",
         NO_SKIP_TEST
     );
 
     test4(
-        "Test 4: charIsDirty()",
+        "Test 4: cleanExpression() [[Must be declared in the header for testing]]",
         "Check whether function returns correctly for given input",
         NO_SKIP_TEST
     );
@@ -96,6 +96,28 @@ void test3(char* testName, char* testPurpose, TestFlag flag) {
             puts("TEST 3 PASSED\n");
         } else {
             puts("TEST 3 FAILED\n");
+        }
+        
+    } else {
+        puts("SKIPPED\n");
+    }
+}
+
+void test4(char* testName, char* testPurpose, TestFlag flag) {
+    printTestName(testName);
+    printTestPurpose(testPurpose);
+
+    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
+
+        const int EXP_LENGTH = 1024;
+        char expression[] = "2 + 3* 4\t-9";
+
+        int numOfRemovedChars = cleanExpression(expression); 
+
+        if(numOfRemovedChars == 4) {
+            puts("TEST 4 PASSED\n");
+        } else {
+            puts("TEST 4 FAILED\n");
         }
         
     } else {
