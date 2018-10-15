@@ -7,6 +7,7 @@
 
 
 void test1(char*, char*, TestFlag);
+void test2(char*, char*, TestFlag);
 
 int main(void) {
 
