@@ -26,46 +26,23 @@ int main(void) {
 }
 
 void test1(char* testName, char* testPurpose, TestFlag flag) {
-    printTestName(testName);
-    printTestPurpose(testPurpose);
-
-    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
-
+    
+    TEST_START(testName, testPurpose, flag)
         Stack newStack = createStack();
-        
-        if(newStack) {
-            puts("TEST 1 PASSED\n");
-        } else {
-            puts("TEST 1 FAILED\n");
-        }
-
+        TEST_VERDICT(newStack)
         destroyStack(newStack);
-        
-    } else {
-        puts("SKIPPED\n");
-    }
+    TEST_END
 }
 
 void test2(char* testName, char* testPurpose, TestFlag flag) {
-    printTestName(testName);
-    printTestPurpose(testPurpose);
+    
+    TEST_START(testName, testPurpose, flag)
+         Stack newStack = createStack();
+         destroyStack(newStack);
 
-    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
-
-        Stack newStack = createStack();
-        
-        destroyStack(newStack);
-
-        // a weird fix, but, no memory leak can ensure success
+         // a weird fix, but, no memory leak can ensure success
         newStack = NULL;
 
-        if(!newStack) {
-            puts("TEST 2 PASSED\n");
-        } else {
-            puts("TEST 2 FAILED\n");
-        }
-        
-    } else {
-        puts("SKIPPED\n");
-    }
+        TEST_VERDICT(!newStack)
+    TEST_END
 }
