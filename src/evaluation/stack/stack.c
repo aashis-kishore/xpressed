@@ -51,3 +51,12 @@ void destroyStack(Stack stack) {
 
     free(stack);
 }
+
+
+int getStackLength(Stack stack) {
+    if(!stack) {
+        reportErrorAndExit(invalidStackError);
+    }
+
+    return stack->length;
+}
