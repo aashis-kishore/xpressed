@@ -84,3 +84,11 @@ void pushStack(Stack stack, char data) {
 
     stack->length++;
 }
+
+int emptyStack(Stack stack) {
+    if(!stack) {
+        reportErrorAndExit(invalidStackError);
+    }
+
+    return stack->length == 0;
+}
