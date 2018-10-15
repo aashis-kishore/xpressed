@@ -80,6 +80,7 @@ void test4(char* testName, char* testPurpose, TestFlag flag) {
         pushStack(newStack, 'Z');
 
         int stackLen = getStackLength(newStack);
+        destroyStack(newStack);
 
         TEST_VERDICT(stackLen == 2)
     TEST_END
