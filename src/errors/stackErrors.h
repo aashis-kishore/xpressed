@@ -14,4 +14,9 @@ Errors invalidStackError = {
     "invalid stack as argument"
 };
 
+Errors nodeCreatFailError = {
+    NODE_CREAT_FAIL_ERROR,
+    "node creation failed"
+};
+
 #endif
