@@ -17,12 +17,12 @@ typedef struct errors {
     char* errorMsg;
 } Errors;
 
-void reportError(char* errorMsg) {
-    printf("%s\n", errorMsg);
+void reportError(Errors error) {
+    printf("Error[%d]: %s\n", error.code, error.errorMsg);
 }
 
 void reportErrorAndExit(Errors error) {
-    printf("%s\n", error.errorMsg);
+    printf("Error[%d]: %s\n", error.code, error.errorMsg);
     exit(error.code);
 }
 
