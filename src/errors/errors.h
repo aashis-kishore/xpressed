@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 typedef enum errorcode {
-    STACK_UNDERFLOW_ERROR,
+    STACK_UNDERFLOW_ERROR = -1,
     READ_ERROR = 1,
     INVALID_BUFFER_ERROR,
     INVALID_EXPRESSION_ERROR,
