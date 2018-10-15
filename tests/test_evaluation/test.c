@@ -130,6 +130,6 @@ void test6(char* testName, char* testPurpose, TestFlag flag) {
         int status1 = emptyStack(newStack);
 
         destroyStack(newStack);
-        TEST_VERDICT(c1 == 'A' && c2 == 'B' && status1 == 1)
+        TEST_VERDICT(c1 == 'B' && c2 == 'A' && status1 == 1)
     TEST_END
 }
