@@ -55,9 +55,9 @@ void test2(char* testName, char* testPurpose, TestFlag flag) {
         int numOfRemovedChars = getCleanExpression(expression);
 
         if(numOfRemovedChars == 4) {
-            puts("TEST 1 PASSED\n");
+            puts("TEST 2 PASSED\n");
         } else {
-            puts("TEST 1 FAILED\n");
+            puts("TEST 2 FAILED\n");
         }
         
     } else {
