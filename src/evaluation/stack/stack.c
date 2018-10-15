@@ -119,3 +119,16 @@ char popStack(Stack stack) {
 
     return (char)STACK_UNDERFLOW_ERROR;
 }
+
+
+char peekStack(Stack stack) {
+    if(!stack) {
+        reportErrorAndExit(invalidStackError);
+    }
+
+    if(!emptyStack(stack)) {
+        return stack->head->data;
+    }
+
+    return (char)STACK_UNDERFLOW_ERROR;
+}
