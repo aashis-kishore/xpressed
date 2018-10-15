@@ -27,6 +27,7 @@ int main(void) {
 
 void test1(char* testName, char* testPurpose, TestFlag flag) {
     printTestName(testName);
+    printTestPurpose(testPurpose);
 
     if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
 
@@ -43,6 +44,7 @@ void test1(char* testName, char* testPurpose, TestFlag flag) {
 
 void test2(char* testName, char* testPurpose, TestFlag flag) {
     printTestName(testName);
+    printTestPurpose(testPurpose);
 
     if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
 
