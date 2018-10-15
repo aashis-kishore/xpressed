@@ -8,6 +8,8 @@
 
 void test1(char*, char*, TestFlag);
 void test2(char*, char*, TestFlag);
+void test3(char*, char*, TestFlag);
+void test4(char*, char*, TestFlag);
 
 int main(void) {
 
@@ -20,6 +22,18 @@ int main(void) {
     test2(
         "Test 2: getCleanExpression()",
         "Check whether function returns clean expression",
+        SKIP_TEST
+    );
+
+    test3(
+        "Test 3: charIsDirty()",
+        "Check whether function returns correctly for given input",
+        NO_SKIP_TEST
+    );
+
+    test4(
+        "Test 4: charIsDirty()",
+        "Check whether function returns correctly for given input",
         NO_SKIP_TEST
     );
 
@@ -64,4 +78,27 @@ void test2(char* testName, char* testPurpose, TestFlag flag) {
         puts("SKIPPED\n");
     }
 
+}
+
+void test3(char* testName, char* testPurpose, TestFlag flag) {
+    printTestName(testName);
+    printTestPurpose(testPurpose);
+
+    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
+
+        int status1 = charIsDirty(' ');
+        int status2 = charIsDirty('\t');
+        int status3 = charIsDirty('\f');
+        int status4 = charIsDirty(' ');
+        int status5 = charIsDirty('a');
+
+        if(status1 == 1 && status2 == 1 && status3 == 1 && status4 == 1 && status5 == 0) {
+            puts("TEST 3 PASSED\n");
+        } else {
+            puts("TEST 3 FAILED\n");
+        }
+        
+    } else {
+        puts("SKIPPED\n");
+    }
 }
