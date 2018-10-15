@@ -73,6 +73,7 @@ static Node createNode(char data) {
     newNode->next = NULL;
 }
 
+
 void pushStack(Stack stack, char data) {
     if(!stack) {
         reportErrorAndExit(invalidStackError);
@@ -85,6 +86,7 @@ void pushStack(Stack stack, char data) {
     stack->length++;
 }
 
+
 int emptyStack(Stack stack) {
     if(!stack) {
         reportErrorAndExit(invalidStackError);
@@ -92,6 +94,7 @@ int emptyStack(Stack stack) {
 
     return stack->length == 0;
 }
+
 
 static char destroyHeadNode(Stack stack) {
     Node head = stack->head;
