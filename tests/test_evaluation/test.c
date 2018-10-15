@@ -11,6 +11,7 @@ void test3(char*, char*, TestFlag);
 void test4(char*, char*, TestFlag);
 void test5(char*, char*, TestFlag);
 void test6(char*, char*, TestFlag);
+void test7(char*, char*, TestFlag);
 
 int main(void) {
 
@@ -47,6 +48,12 @@ int main(void) {
     test6(
         "Test 6: popStack()",
         "Ensure pop operation works correctly",
+        NO_SKIP_TEST
+    );
+
+    test7(
+        "Test 7: peekStack()",
+        "Check whether function's working correctly",
         NO_SKIP_TEST
     );
 
@@ -131,5 +138,29 @@ void test6(char* testName, char* testPurpose, TestFlag flag) {
 
         destroyStack(newStack);
         TEST_VERDICT(c1 == 'B' && c2 == 'A' && status1 == 1)
+    TEST_END
+}
+
+void test7(char* testName, char* testPurpose, TestFlag flag) {
+
+    TEST_START(testName, testPurpose, flag)
+        Stack newStack = createStack();
+        
+        pushStack(newStack, 'A');
+        pushStack(newStack, 'B');
+        pushStack(newStack, 'C');
+
+        popStack(newStack);
+
+        char c1 = peekStack(newStack);
+
+        popStack(newStack);
+        popStack(newStack);
+
+        char c2 = peekStack(newStack);
+
+        destroyStack(newStack);
+
+        TEST_VERDICT(c1 == 'B' && c2 == -1);
     TEST_END
 }
