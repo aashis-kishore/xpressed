@@ -10,6 +10,7 @@ void test2(char*, char*, TestFlag);
 void test3(char*, char*, TestFlag);
 void test4(char*, char*, TestFlag);
 void test5(char*, char*, TestFlag);
+void test6(char*, char*, TestFlag);
 
 int main(void) {
 
@@ -40,6 +41,12 @@ int main(void) {
     test5(
         "Test 5: emptyStack()",
         "Check whether function works correctly",
+        NO_SKIP_TEST
+    );
+
+    test6(
+        "Test 6: popStack()",
+        "Ensure pop operation works correctly",
         NO_SKIP_TEST
     );
 
@@ -106,5 +113,23 @@ void test5(char* testName, char* testPurpose, TestFlag flag) {
         destroyStack(newStack);
 
         TEST_VERDICT(status1 == 1 && status2 == 0)
+    TEST_END
+}
+
+void test6(char* testName, char* testPurpose, TestFlag flag) {
+
+    TEST_START(testName, testPurpose, flag)
+        Stack newStack = createStack();
+
+        pushStack(newStack, 'A');
+        pushStack(newStack, 'B');
+
+        char c1 = popStack(newStack);
+        char c2 = popStack(newStack);
+
+        int status1 = emptyStack(newStack);
+
+        destroyStack(newStack);
+        TEST_VERDICT(c1 == 'A' && c2 == 'B' && status1 == 1)
     TEST_END
 }
