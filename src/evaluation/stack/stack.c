@@ -60,3 +60,27 @@ int getStackLength(Stack stack) {
 
     return stack->length;
 }
+
+
+static Node createNode(char data) {
+    Node newNode = malloc(sizeof(struct node));
+
+    if(!newNode) {
+        reportErrorAndExit(stackCreatFailError);
+    }
+
+    newNode->data = data;
+    newNode->next = NULL;
+}
+
+void pushStack(Stack stack, char data) {
+    if(!stack) {
+        reportErrorAndExit(invalidStackError);
+    }
+
+    Node newNode = createNode(data);
+    newNode->next = stack->head;
+    stack->head = newNode;
+
+    stack->length++;
+}
