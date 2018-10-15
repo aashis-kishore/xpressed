@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "tests.h"
+#include "../tests.h"
 
 #include "../../src/evaluation/stack/stack.h"
 
