@@ -19,4 +19,9 @@ Errors nodeCreatFailError = {
     "node creation failed"
 };
 
+Errors stackUnderflowError = {
+    STACK_UNDERFLOW_ERROR,
+    "stack underflow! ( there are no more data in the stack )"
+};
+
 #endif
