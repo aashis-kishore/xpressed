@@ -8,6 +8,7 @@
 void test1(char*, char*, TestFlag);
 void test2(char*, char*, TestFlag);
 void test3(char*, char*, TestFlag);
+void test4(char*, char*, TestFlag);
 
 int main(void) {
 
@@ -26,6 +27,12 @@ int main(void) {
     test3(
         "Test 3: getStackLength()",
         "Check whether function returns correct output",
+        NO_SKIP_TEST
+    );
+
+    test4(
+        "Test 4: pushStack()",
+        "Ensure push operation works correctly",
         NO_SKIP_TEST
     );
 
@@ -62,5 +69,18 @@ void test3(char* testName, char* testPurpose, TestFlag flag) {
         destroyStack(newStack);
 
         TEST_VERDICT(stackLen == 0)
+    TEST_END
+}
+
+void test4(char* testName, char* testPurpose, TestFlag flag) {
+
+    TEST_START(testName, testPurpose, flag)
+        Stack newStack = createStack();
+        pushStack(newStack, 'A');
+        pushStack(newStack, 'Z');
+
+        int stackLen = getStackLength(newStack);
+
+        TEST_VERDICT(stackLen == 2)
     TEST_END
 }
