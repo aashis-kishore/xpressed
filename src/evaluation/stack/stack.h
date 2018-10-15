@@ -7,7 +7,7 @@ Stack createStack(void);
 
 void destroyStack(Stack);
 
-int stackLength(Stack);
+int getStackLength(Stack);
 
 void pushStack(Stack, char);
 
