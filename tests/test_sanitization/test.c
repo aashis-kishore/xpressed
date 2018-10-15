@@ -27,41 +27,23 @@ int main(void) {
 }
 
 void test1(char* testName, char* testPurpose, TestFlag flag) {
-    printTestName(testName);
-    printTestPurpose(testPurpose);
 
-    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
-
+    TEST_START(testName, testPurpose, flag)
         const int EXP_LENGTH = 1024;
         char* expression = NULL;
 
         int expLength = getCleanExpression(expression);
-        
-    } else {
-        puts("SKIPPED\n");
-    }
-
+    TEST_END
 }
 
 void test2(char* testName, char* testPurpose, TestFlag flag) {
-    printTestName(testName);
-    printTestPurpose(testPurpose);
-
-    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
-
+    
+    TEST_START(testName, testPurpose, flag)
         const int EXP_LENGTH = 1024;
         char expression[] = "2 + 3* 4\t-9";
 
         int numOfRemovedChars = getCleanExpression(expression);
 
-        if(numOfRemovedChars == 4) {
-            puts("TEST 2 PASSED\n");
-        } else {
-            puts("TEST 2 FAILED\n");
-        }
-        
-    } else {
-        puts("SKIPPED\n");
-    }
-
+        TEST_VERDICT(numOfRemovedChars == 4)
+    TEST_END
 }
