@@ -14,7 +14,7 @@ int main(void) {
     test1(
         "Test 1: getCleanExpression()",
         "Check whether function reports error when 'NULL' is passed as argument",
-        NO_SKIP_TEST
+        SKIP_TEST
     );
 
     test2(
