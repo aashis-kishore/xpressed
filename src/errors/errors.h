@@ -8,6 +8,8 @@ typedef enum errorcode {
     READ_ERROR = 1,
     INVALID_BUFFER_ERROR,
     INVALID_EXPRESSION_ERROR,
+    STACK_CREAT_FAIL_ERROR,
+    INVALID_STACK_ERROR
 } ErrorCode;
 
 typedef struct errors {
