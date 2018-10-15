@@ -27,38 +27,22 @@ int main(void) {
 }
 
 void test1(char* testName, char* testPurpose, TestFlag flag) {
-    printTestName(testName);
-    printTestPurpose(testPurpose);
-
-    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
-
+    TEST_START(testName, testPurpose, flag)
         const int EXP_LENGTH = 1024;
         char buffer[EXP_LENGTH];
 
         int expLength = readDirtyExpression(buffer, EXP_LENGTH);
 
-        if(expLength == (int)strlen(buffer)) {
-            puts("TEST 1 PASSED\n");
-        } else {
-            puts("TEST 1 FAILED\n");
-        }
-
-    } else {
-        puts("SKIPPED\n");
-    }
+        TEST_VERDICT(expLength == (int)strlen(buffer))
+    TEST_END
 }
 
 void test2(char* testName, char* testPurpose, TestFlag flag) {
-    printTestName(testName);
-    printTestPurpose(testPurpose);
 
-    if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
-
+    TEST_START(testName, testPurpose, flag)
         const int EXP_LENGTH = 1024;
         char* buffer = NULL;
 
         readDirtyExpression(buffer, EXP_LENGTH);
-    } else {
-        puts("SKIPPED\n");
-    }
+    TEST_END
 }
