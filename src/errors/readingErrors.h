@@ -7,12 +7,12 @@
 
 Errors readError = {
     READ_ERROR,
-    "readDirtyExpression(): unable to read"
+    "unable to read"
 };
 
 Errors invalidBufferError = {
     INVALID_BUFFER_ERROR,
-    "readDirtyExpression(): invalid buffer"
+    "invalid buffer as argument"
 };
 
 #endif

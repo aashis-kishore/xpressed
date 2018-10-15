@@ -7,7 +7,7 @@
 
 Errors invalidExpressionError = {
     INVALID_EXPRESSION_ERROR,
-    "getCleanExpression(): invalid expression"
+    "invalid expression as argument"
 };
 
 #endif
