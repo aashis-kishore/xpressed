@@ -22,7 +22,7 @@ int main(void) {
     test2(
         "Test 2: getCleanExpression()",
         "Check whether function returns clean expression",
-        SKIP_TEST
+        NO_SKIP_TEST
     );
 
     test3(
@@ -64,7 +64,7 @@ void test2(char* testName, char* testPurpose, TestFlag flag) {
     if((flag & NO_SKIP_TEST) == NO_SKIP_TEST) {
 
         const int EXP_LENGTH = 1024;
-        char* expression = "2 + 3* 4    -9";
+        char expression[] = "2 + 3* 4\t-9";
 
         int numOfRemovedChars = getCleanExpression(expression);
 
