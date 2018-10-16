@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-#include "../tests.h"
+#include "../../tests.h"
 
-#include "../../src/evaluation/stack/stack.h"
+#include "../../../src/evaluation/stack/stack.h"
 
 
 void test1(char*, char*, TestFlag);

@@ -47,20 +47,20 @@ clean_test_sanitization:
 ## test_evaluation_stack: start
 
 # test_evaluation_stack objects and sources
-test_evaluation_stack_objects = tests/test_evaluation/test.o src/evaluation/stack/stack.o
-test_evaluation_stack_src = tests/test_evaluation/test.c src/evaluation/stack/stack.c
+test_evaluation_stack_objects = tests/test_evaluation/test_stack/test.o src/evaluation/stack/stack.o
+test_evaluation_stack_src = tests/test_evaluation/test_stack/test.c src/evaluation/stack/stack.c
 
 # test_evaluation output directory
-test_evaluation_out_dir = tests/test_evaluation/
+test_evaluation_stack_out_dir = tests/test_evaluation/
 
 test_evaluation_stack: $(test_evaluation_stack_objects)
-	$(CC) $(CCFLAGS) -o $(test_evaluation_out_dir)output $^
+	$(CC) $(CCFLAGS) -o $(test_evaluation_stack_out_dir)output $^
 
-run_test_evaluation_stack: $(test_evaluation_out_dir)/output
-	./$(test_evaluation_out_dir)/output
+run_test_evaluation_stack: $(test_evaluation_stack_out_dir)/output
+	./$(test_evaluation_stack_out_dir)/output
 
 clean_test_evaluation_stack:
-	$(RM) -f $(test_evaluation_stack_objects) $(test_evaluation_out_dir)/output
+	$(RM) -f $(test_evaluation_stack_objects) $(test_evaluation_stack_out_dir)/output
 
 ##
 
